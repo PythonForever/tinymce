@@ -1,25 +1,26 @@
-tinymce.PluginManager.add('example', function (editor, url) {
+tinymce.PluginManager.add('example2', function (editor, url) {
     // Add a button that opens a window
-    editor.addButton('example', {
-        text: 'My button',
+    editor.addButton('example2', {
+        text: 'Kevin button!!!',
         icon: false,
         onclick: function () {
             // Open window
             editor.windowManager.open({
-                title: 'Example plugin',
+                title: 'Example plugin?',
                 body: [
                     {type: 'textbox', name: 'title', label: 'Title'}
                 ],
                 onsubmit: function (e) {
                     // Insert content when the window form is submitted
-                    editor.insertContent('Title: ' + e.data.title);
+                    //editor.insertContent('Title: ' + e.data.title);
+                    editor.setContent('<html><body><h1>hey!!!</h1></body></html>');
                 }
             });
         }
     });
 
     // Adds a menu item to the tools menu
-    editor.addMenuItem('example', {
+    editor.addMenuItem('example2', {
         text: 'Example plugin',
         context: 'tools',
         onclick: function () {
