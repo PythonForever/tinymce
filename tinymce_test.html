@@ -2,19 +2,21 @@
 <html>
 <head>
     <script src="http://cdn.tinymce.com/4/tinymce.min.js"></script>
-    <script src="scripts/my.tinymce.plugin.js"></script>
+    <script src="scripts/add.span.plugin.js"></script>
+    <script src="scripts/add.testing.text.plugin.js"></script>
+
 
     <script>
     tinymce.init({
         selector: '#mytextarea',
-        plugins: 'example2',
-        toolbar: 'example2'
+        plugins: 'example2 testingtext',
+        toolbar: 'example2 testingtext'
     });
     </script>
 </head>
 
 <body>
-<h1>TinyMCE Quick Start Guide</h1>
+<h1>TinyMCE Regex replacement for code sections</h1>
 <form method="post">
     <label for="mytextarea"></label><textarea id="mytextarea">Hello, World!!!!!</textarea>
 </form>
