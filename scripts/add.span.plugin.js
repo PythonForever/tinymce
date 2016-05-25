@@ -2,7 +2,7 @@ tinymce.PluginManager.add('example2', function (editor, url) {
     // Add a button that opens a window
 
     editor.addButton('example2', {
-        text: 'Add span',
+        text: 'Add Markup to Code Section',
         icon: false,
         onclick: function () {
             $txt = tinyMCE.activeEditor.getContent({format : 'raw'});
