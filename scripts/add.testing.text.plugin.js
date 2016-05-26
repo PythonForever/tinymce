@@ -5,7 +5,7 @@ tinymce.PluginManager.add('testingtext', function (editor, url) {
         text: 'Add testing text',
         icon: false,
         onclick: function () {
-            $txt = get_testing_text();
+            var $txt = get_testing_text();
             editor.setContent($txt);
 
         }
@@ -23,7 +23,7 @@ tinymce.PluginManager.add('testingtext', function (editor, url) {
 
 
 function get_testing_text(){
-    var htmlString = `Amendment:
+    return `Amendment:
 Section 106(a) of title I of div. B of Pub. L. 110-343 (Energy Improvement and Extension Act of 2008) amends Code section 25D(g) by striking "December 31, 2008" and inserting "December 31, 2016".
 Amendment:
 Section 106(b)(1) of title I of div. B of Pub. L. 110-343 amends Code section 25D(b)(1), as amended by subsections (c) and (d),--
@@ -71,6 +71,5 @@ Section 106(f) of title I of div. B of Pub. L. 110-343 (Energy Improvement and E
 "(1) IN GENERAL.--Except as provided in paragraph (2), the amendments made by this section shall apply to taxable years beginning after December 31, 2007.
 "(2) SOLAR ELECTRIC PROPERTY LIMITATION.--The amendments made by subsection (b) shall apply to taxable years beginning after December 31, 2008.
 "(3) APPLICATION OF EGTRRA SUNSET.--The amendments made by subparagraphs (A) and (B) of subsection (e)(2) shall be subject to title IX of the Economic Growth and Tax Relief Reconciliation Act of 2001 in the same manner as the provisions of such Act to which such amendments relate." [EGTRRA sunset provision repealed.]`;
-return htmlString;
 }
 

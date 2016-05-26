@@ -1,18 +1,19 @@
-tinymce.PluginManager.add('figure', function (editor, url) {
-    // Add a button that opens a window
+tinymce.PluginManager.add('markupcode', function (editor, url) {
 
-    editor.addButton('figure', {
-        text: 'Add Markup to Code Section',
-        icon: false,
-        onclick: function () {
-            $txt = tinyMCE.activeEditor.getContent({format : 'raw'});
+
+	// config this button to show under "Edit" menu
+	editor.addMenuItem('markupcode', {
+		icon: 'image',
+		text: 'Insert markupcode',
+		onclick: function () {
+            var $txt = tinyMCE.activeEditor.getContent({format : 'raw'});
             $txt = add_spans_to_sections($txt);
             editor.setContent($txt);
 
-        }
-    });
-
-
+        },
+		context: 'edit',
+		prependToContext: true
+	});
 
 
 });
@@ -22,7 +23,7 @@ tinymce.PluginManager.add('figure', function (editor, url) {
 function add_spans_to_sections(html_output) {
     var replacement_pre = '<span class="r_entity r_codesection" typeof="tae:CodeSection"><span class="r_prop r_name" property="schema:name">';
     var replacement_post = '</span></span>';
-    txt = html_output.replace(/\d+\S*(\([\w\(\)]+\))/mg,replacement_pre+"\$&"+replacement_post); // $& means the whole matched string
+    var txt = html_output.replace(/\d+\S*(\([\w\(\)]+\))/mg,replacement_pre+"\$&"+replacement_post); // $& means the whole matched string
     return txt;
 }
 
