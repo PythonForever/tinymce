@@ -1,7 +1,7 @@
-tinymce.PluginManager.add('example2', function (editor, url) {
+tinymce.PluginManager.add('figure', function (editor, url) {
     // Add a button that opens a window
 
-    editor.addButton('example2', {
+    editor.addButton('figure', {
         text: 'Add Markup to Code Section',
         icon: false,
         onclick: function () {
